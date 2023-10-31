@@ -2,7 +2,7 @@
 
 1.Description 
  --------------
-This program takes brackets as input and validates if each bracket has an appropriate closing bracket.
+This program takes brackets as input and validates if each bracket has an appropriate closing bracket to return true else false.
 
 2.Getting Started
  --------------
