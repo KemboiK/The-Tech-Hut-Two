@@ -5,10 +5,10 @@ public class BracketValidator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a list of brackets:");
+        System.out.print("Enter a sequence of brackets:");
         String input = scanner.nextLine();
 
-        if (isValidBracketList(input)) {
+        if (isValidBracketSequence(input)) {
             System.out.println("True");
         } else {
             System.out.println("False");
@@ -18,11 +18,13 @@ public class BracketValidator {
         scanner.close();
     }
 
-    public static boolean isValidBracketList(String input) {
+    public static boolean isValidBracketSequence(String input) {
         Stack<Character> stack = new Stack<>();
 
         for (char bracket : input.toCharArray()) {
             if (bracket == '(' || bracket == '{' || bracket == '[') {
+                stack.push(bracket);
+            } else if (bracket == ')' || bracket == '}' || bracket == ']') {
                 if (stack.isEmpty()) {
                     return false; // No matching opening bracket found
                 }
